@@ -1,14 +1,18 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import NuevoValorDescuentoAplicado from '../logica/ModificaPrecio'
 
 export default function Products({ resultado }) {
     const [productos, setProductos] = useState([])
+    const [productosDescuentos, setProductosDescuentos] = useState([])
 
     useEffect(() => {
-        if (resultado != null) {
+        if (typeof resultado !== 'undefined' && resultado.data != null) {
+            // console.log('resultado', resultado)
             setProductos(resultado)
             // console.log('productos', productos)
+            setProductosDescuentos(NuevoValorDescuentoAplicado(productos))
         }
-    }, [resultado])
+    }, [resultado, productos])
 
     return (
         <Fragment>
@@ -16,13 +20,13 @@ export default function Products({ resultado }) {
             <div>
                 {productos ? (
                     <div>
-                        {/* {console.log('forEach', productos)} */}
-                        {productos.map((item, index) => (
+                        {productosDescuentos.map((item, index) => (
                             <div key={index}>
                                 <h1>{item.marcaProductoDTO}</h1>
                                 <label>{item.descripcionProductoDTO}</label>
                                 <img src={`http://${item.fotoProductoDTO}`} alt="producto-walmart" />
                                 ${item.valorProductoDTO}
+                                ${item.valorDescuentoProductoDTO}
                             </div>
                         ))}
                     </div>

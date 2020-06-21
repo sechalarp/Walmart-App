@@ -6,9 +6,10 @@ import GetProductos from './components/data/Api'
 
 async function fetchData(producto) {
   if (producto !== '') {
-    console.log(`Ha cambiado el estado de producto a: ${producto}`)
-    return await GetProductos(producto)
+    // console.log(`Ha cambiado el estado de producto a: ${producto}`)
+    let data = await GetProductos(producto)
     // console.log('data', data)
+    return data
   }
 }
 
