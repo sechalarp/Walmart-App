@@ -1,3 +1,12 @@
+input{
+    text-indent: 10px;
+    border: none;
+}
+
+.img-align{
+    padding-top: 3px;
+}
+
 .info-contacto{
     background-color: #003758;
     color: #ffff;
@@ -8,9 +17,6 @@
 
 .banner-buscador{
     background-color: #0071ce;
-    /* height: 80px; */
-    /* padding: 10px; */
-    /* position: relative; */
     position: absolute;
     width: 100%;
 }
@@ -22,31 +28,53 @@
 }
 
 .logo-app{
-    /* display: inline-block; */
     float: left;
     left: .5rem;
     margin: 10px;
-    /* position: relative; */
     top: 10px;
     width: 130px;
 }
 
+.input-buscador{
+    margin: 10px;
+    width: 60%;
+}
+
 .btn-categorias, .btn-carro, .btn-supermercado{
+    text-align: center;
     height: 38px;
-    min-width: 140px;
+    min-width: 100px;
     color: #fff;
     margin: 10px;
     border-radius: 5px;
-    display: inline-block;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
     float: left;
-    padding-top: 10px;
-    /* position: relative; */
-    /* top: 10px;
-    width: 150px; */
+    padding: 10px 10px 0 10px;
 }
+
+.input-buscador{
+    border-radius: 5px;
+    color: #fff;
+    float: left;
+    height: 38px;
+    margin: 15px 10px 10px 10px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.buscador{
+    border-color: #808080;
+    border-radius: 26px;
+    float: left;
+    font-size: 16px;
+    height: 35px;
+    min-width: 250px;
+    outline: none;
+    width: 100%;
+}
+
+.btn-categorias:hover, .btn-carro:hover, .btn-supermercado:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
 
 .btn-categorias, .btn-carro{
     background-color: #06568f;
@@ -56,25 +84,26 @@
     background-color: #5fb446;
 }
 
-.buscador{
-    border-radius: 26px;
-    float: left;
-    font-size: 16px;
-    height: 35px;
-    margin: 10px;
-    min-width: 250px;
-    border-color: #808080;
-    width: 60%;
+@media (max-width: 1661px){
+    .input-buscador {
+        width: 60%;
+    }
 }
 
-@media (max-width: 1661px){
-    .buscador {
+@media (max-width: 1571px){
+    .input-buscador {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1261px){
+    .input-buscador {
         width: 40%;
     }
 }
 
 @media (max-width: 1113px){
-    .buscador {
+    .input-buscador {
         width: 30%;
     }
 }
@@ -89,7 +118,7 @@
     .btn-categorias {
         display: none;
     }
-    .buscador {
+    .input-buscador {
         width: 90%;
     }
 }

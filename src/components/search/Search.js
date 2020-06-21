@@ -26,16 +26,18 @@ export default function Search(props) {
                 </div>
                 <div className='btn-categorias'>
                     <img src={menuIcon} className='menuIcon' name='menuIcon' alt='menuIcon' />
-                    Categorías
+                    &nbsp;Categorías
                 </div>
-                <input className='buscador' name="buscador" type="text" onChange={e => handleOnChange(e)} value={palabra} onKeyDown={handleKeyDown} autoComplete='off' placeholder='  ¿Qué estás buscando?' />
+                <div className='input-buscador'>
+                    <input className='buscador' name="buscador" type="text" onChange={e => handleOnChange(e)} value={palabra} onKeyDown={handleKeyDown} autoComplete='off' placeholder='  ¿Qué estás buscando?' />
+                </div>
                 <div className='btn-carro'>
-                    <img alt="liderCart-icon" width="20" src="https://www.lider.cl/catalogo/images/lider-cart.svg" name='liderCart-icon' alt='liderCart-icon' />
-                    Carro
+                    <img className='img-align' alt="liderCart-icon" width="20" src="https://www.lider.cl/catalogo/images/lider-cart.svg" name='liderCart-icon' alt='liderCart-icon' />
+                    &nbsp;Carro
                 </div>
                 <div className='btn-supermercado'>
-                    <img alt="market-icon" width="20" src="https://www.lider.cl/catalogo/images/marketIcon.svg" name='market-icon' alt='market-icon' />
-                    Supermercado
+                    <img className='img-align' alt="market-icon" width="20" src="https://www.lider.cl/catalogo/images/marketIcon.svg" name='market-icon' alt='market-icon' />
+                    &nbsp;Supermercado
                 </div>
             </div>
         </Fragment>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import './App.css';
 import Search from './components/search/Search';
 import Products from './components/products/Products';
@@ -6,9 +6,7 @@ import GetProductos from './components/data/Api'
 
 async function fetchData(producto) {
   if (producto !== '') {
-    // console.log(`Ha cambiado el estado de producto a: ${producto}`)
     let data = await GetProductos(producto)
-    // console.log('data', data)
     return data
   }
 }
@@ -23,12 +21,16 @@ function App() {
 
 
   return (
-    <div className="App">
-      <Search onChange={value => setProducto(value)} />
-      <header className="App-header">
-        <Products resultado={resultado} />
-      </header>
-    </div>
+    <Fragment>
+      <div className='header'>
+        <Search onChange={value => setProducto(value)} />
+      </div>
+      <div className="App">
+        <header className="App-header">
+          <Products resultado={resultado} producto={producto} />
+        </header>
+      </div>
+    </Fragment>
   );
 }
 

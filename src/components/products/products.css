@@ -1,9 +1,95 @@
+.text-busqueda{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    margin-left: 10px;
+    z-index: 999;
+}
+
+.txt-products{
+    color: #000;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
   transition: 0.3s;
-  width: 40%;
+  margin: 30px 0px;
+  width: 100%;
+}
+
+.card-img{
+    margin: 20px;
+    width: 200px;
+}
+
+.container {
+    background-color: #fff;
+    color: #000;
+    padding: 2px 16px;
+    border-radius: 0 0 5px 5px;
+}
+
+.btn-agregar{
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.2);
+    color: #0071ce;
+    font-size: 24px;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 200px;
 }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.nombres-producto{
+    margin-bottom: 20px;
+}
+
+.valor-producto{
+    font-size: 20px;
+}
+
+.categorias{
+    font-size: small;
+    display: inline-flex;
+}
+
+.btn-despacho, .btn-retro{
+    border-width: thin;
+    border-style: solid;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.btn-despacho{
+    border-color: #ffa500;
+    color: #ffa500;
+}
+
+.btn-retro{
+    border-color: #0071ce;
+    color: #0071ce;
+    margin-left: 2px;
+}
+
+.valor-descto{
+    background-color: #E93131;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 2px;
+    vertical-align: middle;
+}
+
+@media (max-width: 604px){
+    .text-busqueda {
+        top: 200px;
+    }
 }
