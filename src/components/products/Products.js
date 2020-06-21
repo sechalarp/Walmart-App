@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import NuevoValorDescuentoAplicado from '../logica/ModificaPrecio'
+import './products.css'
 
 export default function Products({ resultado }) {
     const [productos, setProductos] = useState([])
@@ -18,7 +19,8 @@ export default function Products({ resultado }) {
         <Fragment>
             <h1>Resultados</h1>
             <div>
-                {productos ? (
+                {/* {console.log(productosDescuentos)} */}
+                {productosDescuentos.length > 0 ? (
                     <div>
                         {productosDescuentos.map((item, index) => (
                             <div key={index}>

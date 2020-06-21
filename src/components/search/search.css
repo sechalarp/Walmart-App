@@ -1,0 +1,95 @@
+.info-contacto{
+    background-color: #003758;
+    color: #ffff;
+    font-size: 12px;
+    padding: 10px 10px 10px 5px;
+    text-align: left;
+}
+
+.banner-buscador{
+    background-color: #0071ce;
+    /* height: 80px; */
+    /* padding: 10px; */
+    /* position: relative; */
+    position: absolute;
+    width: 100%;
+}
+
+.menuIcon{
+    width: 25px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo-app{
+    /* display: inline-block; */
+    float: left;
+    left: .5rem;
+    margin: 10px;
+    /* position: relative; */
+    top: 10px;
+    width: 130px;
+}
+
+.btn-categorias, .btn-carro, .btn-supermercado{
+    height: 38px;
+    min-width: 140px;
+    color: #fff;
+    margin: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    float: left;
+    padding-top: 10px;
+    /* position: relative; */
+    /* top: 10px;
+    width: 150px; */
+}
+
+.btn-categorias, .btn-carro{
+    background-color: #06568f;
+}
+
+.btn-supermercado{
+    background-color: #5fb446;
+}
+
+.buscador{
+    border-radius: 26px;
+    float: left;
+    font-size: 16px;
+    height: 35px;
+    margin: 10px;
+    min-width: 250px;
+    border-color: #808080;
+    width: 60%;
+}
+
+@media (max-width: 1661px){
+    .buscador {
+        width: 40%;
+    }
+}
+
+@media (max-width: 1113px){
+    .buscador {
+        width: 30%;
+    }
+}
+
+@media (max-width: 956px){
+    .btn-supermercado, .btn-carro {
+        display: none;
+    }
+}
+
+@media (max-width: 604px){
+    .btn-categorias {
+        display: none;
+    }
+    .buscador {
+        width: 90%;
+    }
+}
