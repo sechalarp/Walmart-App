@@ -28,10 +28,10 @@ export default function NuevoValorDescuentoAplicado(productos) {
     return listaProductosDescuentos;
 }
 
-let AplicarDescuento = (isPalindromo, valorProducto) => {
+export function AplicarDescuento(isPalindromo, valorProducto) {
     return isPalindromo ? FormatearAMiles(Math.round(valorProducto * 0.5)) : FormatearAMiles(valorProducto)
 }
 
-function FormatearAMiles(number) {
+export function FormatearAMiles(number) {
     return new Intl.NumberFormat("es-CL").format(number)
 }

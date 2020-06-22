@@ -21,7 +21,6 @@ export default function Products({ resultado, producto }) {
                 <h4 className='txt-products'>Resultados para: {palabraBusqueda}</h4>
             </div>
             <div>
-                {/* {console.log(productosDescuentos)} */}
                 {productosDescuentos.length > 0 ? (
                     <div>
                         {productosDescuentos.map((item, index) => (
