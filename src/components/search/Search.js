@@ -11,8 +11,11 @@ export default function Search(props) {
     };
 
     function handleKeyDown(event) {
-        if (event.key === 'Enter')
+        if (event.key === 'Enter') {
+            if (isNaN(palabra) && palabra.length < 4 || (Number.isInteger(palabra)) || !palabra)
+                return
             props.onChange(palabra)
+        }
     }
 
     return (
@@ -29,7 +32,7 @@ export default function Search(props) {
                     &nbsp;Categorías
                 </div>
                 <div className='input-buscador'>
-                    <input className='buscador' name="buscador" type="text" onChange={e => handleOnChange(e)} value={palabra} onKeyDown={handleKeyDown} autoComplete='off' placeholder='  ¿Qué estás buscando?' />
+                    <input className='buscador' name="buscador" type="text" onChange={e => handleOnChange(e)} value={palabra} onKeyDown={handleKeyDown} autoComplete='off' maxLength='50' placeholder='  ¿Qué estás buscando?' />
                 </div>
                 <div className='btn-carro'>
                     <img className='img-align' alt="liderCart-icon" width="20" src="https://www.lider.cl/catalogo/images/lider-cart.svg" name='liderCart-icon' alt='liderCart-icon' />
