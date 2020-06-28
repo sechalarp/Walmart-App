@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import logo from '../../logo.svg';
 import menuIcon from '../../menuIcon512.png';
+import { InputSearch } from './ValidateSearch';
 import './search.css'
 
 export default function Search(props) {
@@ -12,7 +13,7 @@ export default function Search(props) {
 
     function handleKeyDown(event) {
         if (event.key === 'Enter') {
-            if (isNaN(palabra) && palabra.length < 4 || (Number.isInteger(palabra)) || !palabra)
+            if (!InputSearch(palabra))
                 return
             props.onChange(palabra)
         }
