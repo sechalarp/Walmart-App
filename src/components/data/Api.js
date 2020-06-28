@@ -5,7 +5,14 @@ async function GetProducts(searchInput) {
     const data = axios.get(searchUrl, { headers: { producto: searchInput } })
         .then(response => {
             return response.data;
-        }).catch(error => { console.log(error.response.data) });
+            // }).catch(error => { console.log(error.response.data) });
+        }).catch(function (error) {
+            if (!error.status) {
+                return Promise.reject(error)
+            } else {
+                error = console.log(error.response.data)
+            }
+        });
     return data;
 };
 
