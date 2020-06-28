@@ -5,17 +5,17 @@ import { InputSearch } from './ValidateSearch';
 import './search.css'
 
 export default function Search(props) {
-    const [palabra, setPalabra] = useState('');
+    const [word, setWord] = useState('');
 
     const handleOnChange = event => {
-        setPalabra(event.target.value);
+        setWord(event.target.value);
     };
 
     function handleKeyDown(event) {
         if (event.key === 'Enter') {
-            if (!InputSearch(palabra))
+            if (!InputSearch(word))
                 return
-            props.onChange(palabra)
+            props.onChange(word)
         }
     }
 
@@ -33,7 +33,7 @@ export default function Search(props) {
                     &nbsp;Categorías
                 </div>
                 <div className='input-buscador'>
-                    <input className='buscador' name="buscador" type="text" onChange={e => handleOnChange(e)} value={palabra} onKeyDown={handleKeyDown} autoComplete='off' maxLength='50' placeholder='  ¿Qué estás buscando?' />
+                    <input className='buscador' name="buscador" type="text" onChange={e => handleOnChange(e)} value={word} onKeyDown={handleKeyDown} autoComplete='off' maxLength='50' placeholder='  ¿Qué estás buscando?' />
                 </div>
                 <div className='btn-carro'>
                     <img className='img-align' width="20" src="https://www.lider.cl/catalogo/images/lider-cart.svg" name='liderCart-icon' alt='liderCart-icon' />

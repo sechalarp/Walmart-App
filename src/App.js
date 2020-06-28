@@ -2,32 +2,32 @@ import React, { useState, useEffect, Fragment } from 'react';
 import './App.css';
 import Search from './components/search/Search';
 import Products from './components/products/Products';
-import GetProductos from './components/data/Api'
+import GetProducts from './components/data/Api'
 
-async function fetchData(producto) {
-  if (producto !== '') {
-    let data = await GetProductos(producto)
+async function fetchData(product) {
+  if (product !== '') {
+    let data = await GetProducts(product)
     return data
   }
 }
 
 function App() {
-  const [producto, setProducto] = useState('')
-  const [resultado, setResultado] = useState([])
+  const [product, setProduct] = useState('')
+  const [result, setResult] = useState([])
 
   useEffect(() => {
-    fetchData(producto).then(setResultado)
-  }, [producto])
+    fetchData(product).then(setResult)
+  }, [product])
 
 
   return (
     <Fragment>
       <div className='header'>
-        <Search onChange={value => setProducto(value)} />
+        <Search onChange={value => setProduct(value)} />
       </div>
       <div className="App">
         <header className="App-header">
-          <Products resultado={resultado} producto={producto} />
+          <Products result={result} product={product} />
         </header>
       </div>
     </Fragment>

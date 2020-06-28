@@ -1,36 +1,36 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import NuevoValorDescuentoAplicado from '../logica/ModificaPrecio'
+import NewValueDiscountApplied from '../logica/ModificaPrecio'
 import './products.css'
 
-export default function Products({ resultado, producto }) {
-    const [productos, setProductos] = useState([])
-    const [productosDescuentos, setProductosDescuentos] = useState([])
-    const [palabraBusqueda, setPalabraBusqueda] = useState('')
+export default function Products({ result, product }) {
+    const [products, setProducts] = useState([])
+    const [productsDiscounts, setProductsDiscounts] = useState([])
+    const [wordFind, setWordFind] = useState('')
 
     useEffect(() => {
-        if (typeof resultado !== 'undefined' && resultado.data != null) {
-            setProductos(resultado)
-            setPalabraBusqueda(producto)
-            setProductosDescuentos(NuevoValorDescuentoAplicado(productos))
+        if (typeof result !== 'undefined' && result.data != null) {
+            setProducts(result)
+            setWordFind(product)
+            setProductsDiscounts(NewValueDiscountApplied(products))
         }
-    }, [resultado, productos, producto])
+    }, [result, products, product])
 
     return (
         <Fragment>
             <div className='text-busqueda'>
-                <h4 className='txt-products'>Resultados para: {palabraBusqueda}</h4>
+                <h4 className='txt-products'>Resultados para: {wordFind}</h4>
             </div>
             <div>
-                {productosDescuentos.length > 0 ? (
+                {productsDiscounts.length > 0 ? (
                     <div>
-                        {productosDescuentos.map((item, index) => (
+                        {productsDiscounts.map((item, index) => (
                             <div className="card" key={index}>
                                 <img className='card-img' src={`http://${item.fotoProductoDTO}`} alt="producto-walmart" />
                                 <div className="container">
                                     <div className='nombres-producto'>
                                         <b>{item.marcaProductoDTO}</b>&nbsp;{item.descripcionProductoDTO}
                                     </div>
-                                    {resultado.isPalindromo ? (
+                                    {result.isPalindromo ? (
                                         <div className='valores-producto'>
                                             <b>${item.valorDescuentoProductoDTO}</b>
                                             <label className='valor-descto'>50%</label><br />

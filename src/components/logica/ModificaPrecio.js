@@ -1,4 +1,4 @@
-let productoDescuento = {
+let productDiscount = {
     idProductoDTO: 0,
     marcaProductoDTO: '',
     descripcionProductoDTO: '',
@@ -7,31 +7,31 @@ let productoDescuento = {
     valorDescuentoProductoDTO: ''
 }
 
-export default function NuevoValorDescuentoAplicado(productos) {
-    let listaProductosDescuentos = []
-    if (Object.entries(productos).length !== 0) {
-        let arreglo = productos.data;
-        let isPalindromo = productos.isPalindromo
+export default function NewValueDiscountApplied(products) {
+    let listProductsDiscount = []
+    if (Object.entries(products).length !== 0) {
+        let arreglo = products.data;
+        let isPalindrome = products.isPalindrome
 
         for (var key in arreglo) {
-            productoDescuento = {
+            productDiscount = {
                 idProductoDTO: arreglo[key].idProductoDTO,
                 marcaProductoDTO: arreglo[key].marcaProductoDTO,
                 descripcionProductoDTO: arreglo[key].descripcionProductoDTO,
                 fotoProductoDTO: arreglo[key].fotoProductoDTO,
-                valorProductoDTO: FormatearAMiles(arreglo[key].valorProductoDTO),
-                valorDescuentoProductoDTO: AplicarDescuento(isPalindromo, arreglo[key].valorProductoDTO)
+                valorProductoDTO: FormatToThousands(arreglo[key].valorProductoDTO),
+                valorDescuentoProductoDTO: ApplyDiscount(isPalindrome, arreglo[key].valorProductoDTO)
             }
-            listaProductosDescuentos.push(productoDescuento)
+            listProductsDiscount.push(productDiscount)
         }
     }
-    return listaProductosDescuentos;
+    return listProductsDiscount;
 }
 
-export function AplicarDescuento(isPalindromo, valorProducto) {
-    return isPalindromo ? FormatearAMiles(Math.round(valorProducto * 0.5)) : FormatearAMiles(valorProducto)
+function ApplyDiscount(isPalindrome, valueProduct) {
+    return isPalindrome ? FormatToThousands(Math.round(valueProduct * 0.5)) : FormatToThousands(valueProduct)
 }
 
-export function FormatearAMiles(number) {
+function FormatToThousands(number) {
     return new Intl.NumberFormat("es-CL").format(number)
 }

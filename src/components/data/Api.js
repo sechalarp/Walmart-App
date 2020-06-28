@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-async function GetProductos(searchInput) {
+async function GetProducts(searchInput) {
     var searchUrl = 'http://localhost:8787/api/productos/obtenerproductos'
     const data = axios.get(searchUrl, { headers: { producto: searchInput } })
         .then(response => {
@@ -9,4 +9,4 @@ async function GetProductos(searchInput) {
     return data;
 };
 
-export default GetProductos;
+export default GetProducts;
