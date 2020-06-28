@@ -13,7 +13,7 @@ export default function Products({ resultado, producto }) {
             setPalabraBusqueda(producto)
             setProductosDescuentos(NuevoValorDescuentoAplicado(productos))
         }
-    }, [resultado, productos])
+    }, [resultado, productos, producto])
 
     return (
         <Fragment>

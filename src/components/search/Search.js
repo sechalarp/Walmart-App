@@ -36,11 +36,11 @@ export default function Search(props) {
                     <input className='buscador' name="buscador" type="text" onChange={e => handleOnChange(e)} value={palabra} onKeyDown={handleKeyDown} autoComplete='off' maxLength='50' placeholder='  ¿Qué estás buscando?' />
                 </div>
                 <div className='btn-carro'>
-                    <img className='img-align' alt="liderCart-icon" width="20" src="https://www.lider.cl/catalogo/images/lider-cart.svg" name='liderCart-icon' alt='liderCart-icon' />
+                    <img className='img-align' width="20" src="https://www.lider.cl/catalogo/images/lider-cart.svg" name='liderCart-icon' alt='liderCart-icon' />
                     &nbsp;Carro
                 </div>
                 <div className='btn-supermercado'>
-                    <img className='img-align' alt="market-icon" width="20" src="https://www.lider.cl/catalogo/images/marketIcon.svg" name='market-icon' alt='market-icon' />
+                    <img className='img-align' width="20" src="https://www.lider.cl/catalogo/images/marketIcon.svg" name='market-icon' alt='market-icon' />
                     &nbsp;Supermercado
                 </div>
             </div>
